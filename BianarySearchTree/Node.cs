@@ -11,8 +11,6 @@ namespace BianarySearchTree
         public int Data;
         public Node Left;
         public Node Right;
-        public int key;
-        public int NodeCount;
         
         public Node()
         {

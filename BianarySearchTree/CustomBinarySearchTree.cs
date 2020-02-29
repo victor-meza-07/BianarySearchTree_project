@@ -9,56 +9,56 @@ namespace BianarySearchTree
     class CustomBinarySearchTree
     {
         Node root;
-        Node prevousNode;
         public CustomBinarySearchTree()
         {
             root = null;
-            prevousNode = null;
         }
 
         public void Insert(int i)
         {
 
-            Node newNode = new Node();
-            newNode.Data = i;
-            
+            Node newnode = new Node();
+            newnode.Data = i;
+            //do we have a root?
             if (root == null)
             {
-                root = newNode;
+                root = newnode;
             }
             else 
             {
-                Node currentNode;
-                Node parentNode;
-
-                //Check the value of I
-                //Check if we can be placed there
-                //Check the value of i
-                //check if we can be placed there
-                //check the value of i
+                Node rooty = root;
+                rooty = Search(rooty, i);//Produces a root with n available spot;
+                if (i > rooty.Data)
+                {
+                    rooty.Right = newnode;
+                }
+                else 
+                {
+                    rooty.Left = newnode;
+                }
                 
             }
 
         }
         private Node Search(Node root, int key) 
         {
-            Node returnedNode = null;
             //search left or right;
-            if (key > root.Data) 
+            if (key > root.Data)
             {
-                if (root.Right == null) 
+                //check if we can place our value in the right side by checking if its null or not;
+                if (root.Right != null)
                 {
-                    //my right is null;
+                    root = Search(root.Right, key);
                 }
             }
             else 
             {
-                if (root.Left == null) 
+                if (root.Left != null) 
                 {
-                    //my left is null
+                    root = Search(root.Left, key);
                 }
             }
-            return returnedNode;
+            return root;
         }
          
         

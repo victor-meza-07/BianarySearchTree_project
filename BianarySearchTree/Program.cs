@@ -11,21 +11,15 @@ namespace BianarySearchTree
         static void Main(string[] args)
         {
             CustomBinarySearchTree tree = new CustomBinarySearchTree();
-            tree.Insert(1);
-            tree.Insert(2);
-            tree.Insert(3);
-            tree.Insert(4);
-            tree.Insert(5);
-            tree.Insert(6);
-            tree.Insert(7);
-            tree.Insert(8);
-            tree.Insert(9);
-            tree.Insert(10);
-            tree.Insert(11);
-            tree.Insert(12);
-            tree.Insert(13);
-            tree.Insert(14);
-
+            Random random = new Random();
+            for (int i = 0; i < 15; i++)
+            {
+                int rando = random.Next(15);
+                tree.Insert(rando);
+            }
+            int STOP = 1;
+            int HERE;
+            int PLEASE;
         }
     }
 }
