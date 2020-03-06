@@ -14,7 +14,7 @@ namespace BianarySearchTree
             root = null;
         }
 
-        public void Insert(int i)
+        public void Add(int i)
         {
 
             Node newnode = new Node();
@@ -36,9 +36,7 @@ namespace BianarySearchTree
                 {
                     rooty.Left = newnode;
                 }
-                
             }
-
         }
         private Node Search(Node root, int key) 
         {
@@ -59,6 +57,45 @@ namespace BianarySearchTree
                 }
             }
             return root;
+        }
+        public Node Search(Node searched) 
+        {
+            Node root = this.root;
+            while (true) 
+            {
+                if (searched.Data == root.Data)
+                {
+                    searched = root;
+                    break;
+                }
+                else 
+                {
+                    if (root == null) 
+                    {
+                        break;
+                    }
+                    if (searched.Data > root.Data)
+                    {
+                        root = root.Right;
+                    }
+                    else 
+                    {
+                        root = root.Left;
+                    }
+                }
+            }
+            return searched;
+        }
+
+        public Node Search(int key)
+        {
+            Node node = new Node();
+            node.Data = key;
+
+            node = Search(node);
+
+
+            return node;
         }
          
         
